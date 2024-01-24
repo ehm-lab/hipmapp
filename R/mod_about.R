@@ -59,11 +59,11 @@ mod_about_server <- function(id) {
     output$about_content <- renderUI({
       switch(current_section(),
              "coverage" = p(align = "center", wellPanel(htmltools::includeMarkdown(system.file("app/www/coverage.md", package = "hipmapp")))),
-             "methodology" = p(align = "center", wellPanel(htmltools::includeMarkdown("inst/app/www/methodology.md"))),
-             "glossary" = p(align = "center", wellPanel(htmltools::includeMarkdown("inst/app/www/glossary.md"))),
-             "app" = p(align = "center", wellPanel(htmltools::includeMarkdown("inst/app/www/app.md"))),
-             "demo" = p(align = "center", wellPanel(htmltools::includeMarkdown("inst/app/www/demo.md"))),
-             "source"= p(align = "center", wellPanel(htmltools::includeMarkdown("inst/app/www/source.md"))),
+             "methodology" = p(align = "center", wellPanel(htmltools::includeMarkdown(system.file("app/www/methodology.md", package = "hipmapp")))),
+             "glossary" = p(align = "center", wellPanel(htmltools::includeMarkdown(system.file("app/www/glossary.md", package = "hipmapp")))),
+             "app" = p(align = "center", wellPanel(htmltools::includeMarkdown(system.file("app/www/app.md", package = "hipmapp")))),
+             "demo" = p(align = "center", wellPanel(htmltools::includeMarkdown(system.file("app/www/demo.md", package = "hipmapp")))),
+             "source"= p(align = "center", wellPanel(htmltools::includeMarkdown(system.file("app/www/source.md", package = "hipmapp")))),
              #"separator"=p(align = "center", wellPanel(htmltools::includeMarkdown("inst/app/www/separator.md"))),
              "survey" = p(align="center", wellPanel(
                tags$head(
