@@ -1,0 +1,187 @@
+
+#' map_city Server Functions
+#' @importFrom dplyr lag
+#' @importFrom stats quantile
+#'
+#'
+#' @noRd
+mod_map_city_server <- function(id, data, spatres, varname, temp){
+  moduleServer( id, function(input, output, session){
+    ns <- session$ns
+
+    # RVS MARKERS SHOWN LOCATIONS
+    rv <- reactiveValues(lastCityCount = 0, markers = NULL)
+
+    fillOp_marker <- 0.6
+
+      # FNEXT TWO SECTIONS CAN BE COPY PASTED IN COUNTRY AND REGION
+
+    # MINIMUM VIABLE MAP
+    output$map <- leaflet::renderLeaflet({
+      leaflet(options = leafletOptions(preferCanvas = TRUE, minZoom = 3)) %>%
+        addProviderTiles(provider = "OpenStreetMap.Mapnik",
+                         options = providerTileOptions(updateWhenZooming = FALSE,
+                                                       updateWhenIdle = TRUE),
+                         group = "Local names") %>% 
+        addProviderTiles(provider="CartoDB.VoyagerNoLabels",
+                         options = providerTileOptions(updateWhenZooming = FALSE,
+                                               updateWhenIdle = TRUE),
+                         group="EN names") %>%
+        addProviderTiles(provider="CartoDB.VoyagerOnlyLabels",
+                         options = providerTileOptions(updateWhenZooming = FALSE,
+                                                       updateWhenIdle = TRUE),
+                         group = "EN names") %>%
+        # toggle between basemaps
+        addLayersControl(baseGroups = c("EN names","Local names")) %>%
+        setView(lat=49,lng=12, zoom=5) %>%
+        setMaxBounds(lng1 = -22,lat1 = 24,lng2 = 42,lat2 = 72)
+    })
+
+    # OBS FOR IF NO-DATA
+    observe({
+      if (nrow(data()) == 0) {
+        leafletProxy("map") %>%
+          clearMarkers() %>%
+          clearShapes() %>%
+          clearControls() %>%
+          clearPopups()%>%
+          setView(lat=50, lng=3, zoom= 3) %>%
+          addPopups(
+            lat=50, lng=3,
+            "<div style='background-color: black; color: white; padding: 10px; font-size: 20px;'>No data available for the current selection.</div>",
+            options = popupOptions(maxWidth = 300, minWidth = 200)
+          )
+        return()  # End the execution of the current observer block
+      }
+    })
+
+    # OBS FOR MARKER DRAWING AND FILLING AND LEGEND AND PALETTE BUILDING AND TITLING
+    observe({
+
+      # GET DATA
+      data <- data()
+      spatres <- spatres()
+
+      if (nrow(data) != 0  && spatres == "City" ) {
+
+        # SET VAR ITEMS
+        vnm <- varname()
+        varval <- data[[vnm]]
+
+        # SET RADIUS - TESTING BUG ONLY APPEARING IN DEPLOYED VERSION
+        #radius <- ~ifelse(input$map_zoom >= 7, 20+log(AREA_KM2), log(AREA_KM2))
+        #radius <- ~log(AREA_KM2) # works, no bug
+        radius <- 5
+
+        # print(input$map_zoom);
+        # print(range(data$AREA_KM2))
+        # print(range(log(data$AREA_KM2)))
+        
+        # SET LEGEND TITLE
+        outcome_tag <- ifelse(vnm=="af","Excess fraction of deaths", # A.F
+                              ifelse(vnm=="an","Excess deaths", # A.N
+                                     ifelse(vnm=="rate","Excess mortality rate", NA)))
+        legTitle <- htmltools::HTML(paste0("<b>",outcome_tag,"</b>"), .noWS="outside")
+
+        # SET PAL
+        # load outcome variable data and temperature mode inp_map_R$rang
+        tempr <- temp()
+
+        # conditional palette
+        # for red and blues the max colours in 9 - viridis im not sure
+        if (tempr == "heat") {
+          palcol = "Reds"
+        } else if (tempr == "cold") {
+          palcol = "Blues"
+        } else if (tempr == "tot") {
+          palcol= "viridis"
+        }
+
+        # PALETTE - COLORS - LABELS SET WITH UTILITY FUNCTION - CHECK IT OUT IF YOU DARE
+        # I HAVE NOT BEEN ABLE TO BREAK IT WHILE USING THE APP
+        map_pal_items <- utils_get_set_pal(varval, vnm, palcol, qmax=5, bmax=7, factbin=6)
+
+        pal <- map_pal_items$pal
+        pal_colors <- map_pal_items$colors
+        pal_labs <- map_pal_items$labs
+
+        # create OR update markers
+        if (!is.null(rv$markers)) {
+
+          leafletProxy("map") %>%
+            clearMarkers() %>% clearShapes() %>% clearPopups() %>%
+            addCircleMarkers(
+              data = data,
+              lat = ~latitude,
+              lng = ~longitude,
+              label = paste0("<b>",data$city_name,", ",data$country_name,"<br>",
+                             "Value: ",round(varval,3),"</b>") %>% lapply(htmltools::HTML),
+              labelOptions = labelOptions(
+                style = list("font-weight" = "normal", padding = "3px 8px"),
+                textsize = "13px",
+                direction = "auto"
+              ),
+              radius=radius,
+              stroke=TRUE,
+              color="black",
+              weight=1,
+              fill=TRUE,
+              fillOpacity = fillOp_marker,
+              fillColor = ~pal(varval)
+            ) %>% clearControls() %>%
+            addLegend(
+              position="bottomleft",
+              colors = pal_colors,
+              labels = pal_labs,
+              opacity = 1,
+              title = legTitle
+            )
+          
+        } else {
+          # initial launch
+          leafletProxy("map") %>%
+            setView(lng=mean(data$longitude),lat=mean(data$latitude),zoom=3)%>%
+            addCircleMarkers(
+              data = data,
+              lat = ~latitude,
+              lng = ~longitude,
+              fillOpacity = fillOp_marker
+            ) -> rv$markers
+        }
+      }
+    })
+
+    # SET MAP VIEW WITH BOUNDING BOXES - MUST BE SEPARATE FROM REACTIVE ZOOM CALL OTHERWISE INF- LOOP
+    observe({
+      req(spatres()=="City")
+
+      data <- data()
+
+      if (nrow(data) == 0) {rv$lastCityCount <- 0; return()}
+
+      # Ensure counts are numeric and not NA
+      currentCityCount <- if(isolate(spatres()) == "City") {
+        sum(!is.na(unique(data$city_name)))
+      } else {
+        0
+      }
+
+      # Check if count have changed
+      if (is.numeric(currentCityCount) && (!identical(currentCityCount, rv$lastCityCount))) {
+
+        if (isolate(spatres())=="City") {
+
+          bbox <- c(range(data$longitude), range(data$latitude))
+          flyt <- c(bbox[1], bbox[3], bbox[2], bbox[4])
+
+          leafletProxy("map") %>%
+            flyToBounds(lng1 = flyt[1], lat1 = flyt[2], lng2 = flyt[3], lat2 = flyt[4])}
+
+        # Update the last state
+        rv$lastCityCount <- currentCityCount
+      }
+    })
+
+  })
+}
+

@@ -1,0 +1,10 @@
+name: hipmapp
+title: hipmapp
+username: ehm-lab
+account: ehm-lab
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10928731
+bundleId: 8175796
+url: https://ehm-lab.shinyapps.io/hipmapp/
+version: 1
