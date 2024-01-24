@@ -6,7 +6,7 @@ Change the content of the boxes surrounding the map and rank table to change wha
 
 If **"By Period"** is selected, the values on the slider represent the year matching the projections being shown. Similarly, by selecting **"By Temperature Increase"** we can see the projections associated with a specific temperature increase.
 
-With "All" selected we will see a map of points. If the **"Country"** box and the **"Age group"**" box display "All", then we will see results for all the cities in all the countries, and for all the age groups added together.
+With "City" selected we will see a map of points. If the **"Country"** box and the **"Age group"**" box display "All", then we will see results for all the cities in all the countries, and for all the age groups added together.
 
 With the **"Temperature impact"** box we can choose to show the mortality attributed to heat and/or cold.
 

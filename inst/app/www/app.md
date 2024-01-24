@@ -10,7 +10,7 @@ The **Rank** tab contains an interactive table that presents the projected value
 
 The Group column attempts to create four ranked groups based on all the projected values being compared, with Group 4 being the most impacted.
 
-The sub-scenario column corresponds to the toggle of the same name. The values within the column were left unchanged from the original data and have correspond as follows:
+The sub-scenario column corresponds to the toggle of the same name. The values within the column were left unchanged from the original data and correspond as follows:
 
 > demo = Historical+Demographic\
 > full = Full\
@@ -22,5 +22,5 @@ Within the table views, the impact measures are labeled as AN, AF, and Rate, rep
 
 #### All Data
 
-The **All Data** tab provides the option to download all six main datasets by making a selection and clicking the download button. These datasets are the six combinations of three spatial aggregation levels (city, country or region), and two projection dimensions (5-year periods or global warming levels). This means that if "Country" and "Period" are selected, the downloaded dataset will contain projection results for all countries throughout all projected periods.\
-As the data sample under the selection boxes aims to show, the downloaded data will include all the different combinations of the filtering variables that are not present in this tab.
+The **All Data** tab provides the option to download aany of the six main datasets by making a selection and clicking the download button. These datasets are the six combinations of three spatial aggregation levels (city, country or region), and two projection dimensions (5-year periods or 3-global warming levels). This means that if "Country" and "Period" are selected, the downloaded dataset will contain projection results for all countries throughout all projected periods.\
+As the random data sample under the selection boxes aims to show, the downloaded data will include all the different combinations of all the remaining filtering variables.
