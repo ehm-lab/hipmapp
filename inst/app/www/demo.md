@@ -1,4 +1,4 @@
-### Usage tips
+### General usage tips
 
 The app displays impact projections for a given year, or a given temperature increase value, at one of three spatial aggregation levels (City, Country, Region). These options are given by the **"By"** and **"Spatial domain"** toggles.
 
@@ -12,4 +12,13 @@ With the **"Temperature impact"** box we can choose to show the mortality attrib
 
 Please have a look at the **Glossary** for information on the impact measures and scenarios.
 
-### [**Video demonstration**](https://vimeo.com/902720172?share=copy) {#demo}
+#### Map tips
+
+The layer button in the top-right controls the basemap tiles and by extension the names of the cities and countries shown.
+
+#### Ranking table tips
+
+The ranking table allows sorting by any of the present columns by clicking on the column name. The search box and export buttons are functional, with the latter permitting the download of the displayed table.  
+The number of rows to be shown can be adjusted in the entries box. To download the full table, first show all the rows.
+
+### [**Video demonstration**](https://vimeo.com/902720172?share=copy)

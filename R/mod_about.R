@@ -39,8 +39,9 @@ mod_about_server <- function(id) {
         tabPanel("Methodology", value = "methodology"),
         tabPanel("Glossary", value = "glossary"),
         tabPanel("", value="separator"),
-        tabPanel("App Description", value = "app"),
-        tabPanel("Demo/Usage", value = "demo"),
+        tabPanel("App", value = "app"),
+        tabPanel("Usage tips/Demo", value = "demo"),
+        tabPanel("Source", value="source"),
         tabPanel("Feedback", value = "survey")
         
       )
@@ -57,11 +58,12 @@ mod_about_server <- function(id) {
     # Render content based on current section
     output$about_content <- renderUI({
       switch(current_section(),
-             "coverage" = p(align = "center", wellPanel(htmltools::includeMarkdown("inst/app/www/coverage.md"))),
+             "coverage" = p(align = "center", wellPanel(htmltools::includeMarkdown(system.file("app/www/coverage.md", package = "hipmapp")))),
              "methodology" = p(align = "center", wellPanel(htmltools::includeMarkdown("inst/app/www/methodology.md"))),
              "glossary" = p(align = "center", wellPanel(htmltools::includeMarkdown("inst/app/www/glossary.md"))),
              "app" = p(align = "center", wellPanel(htmltools::includeMarkdown("inst/app/www/app.md"))),
              "demo" = p(align = "center", wellPanel(htmltools::includeMarkdown("inst/app/www/demo.md"))),
+             "source"= p(align = "center", wellPanel(htmltools::includeMarkdown("inst/app/www/source.md"))),
              #"separator"=p(align = "center", wellPanel(htmltools::includeMarkdown("inst/app/www/separator.md"))),
              "survey" = p(align="center", wellPanel(
                tags$head(
