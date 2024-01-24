@@ -1,4 +1,4 @@
-### Usage
+### Usage tips
 
 The app displays impact projections for a given year, or a given temperature increase value, at one of three spatial aggregation levels (City, Country, Region). These options are given by the **"By"** and **"Spatial domain"** toggles.
 
