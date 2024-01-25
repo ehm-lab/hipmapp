@@ -5,6 +5,6 @@ account: adlcruz
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 10793350
-bundleId: 8178835
+bundleId: 8183850
 url: https://adlcruz.shinyapps.io/hipmapp/
 version: 1
