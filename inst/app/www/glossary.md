@@ -10,6 +10,9 @@
 
 ### *Scenarios*
 
+**SSP**: [Shared Socioeconomic Pathway](https://en.wikipedia.org/wiki/Shared_Socioeconomic_Pathways)
+**RCP**: [Representative Concentration Pathway](https://en.wikipedia.org/wiki/Representative_Concentration_Pathway)
+
 **SSP1-RCP2.6**: In the SSP1 scenario, the world shifts towards a more sustainable path, reducing inequalities and investing more in health and education. Coupled with RCP 2.6, this represents a low greenhouse gases emission scenario that would reach net zero around 2075. In this scenario, warming would be expected to remain below 1.8°C. Population growth in Europe is higher in SSP1 than in SSP3 and baseline mortality rates are lower.
 
 **SSP2-RCP4.5**: The SSP2 scenario represents a world in which the socioeconomic and technological trend remain consistent with the historical ones. This is coupled with RCP4.5, representing a moderate greenhouse gases emission scenario in which emissions start decreasing the second half of the century without ever reaching net zero. Under this scenario, warming would likely be above 2°C and could even exceed 3°C.
