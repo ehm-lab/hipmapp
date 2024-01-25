@@ -1,8 +1,8 @@
-# Health Impact Projections map app
+# Health Impact Projections Map App
 
 **This app reports projections of temperature-related mortality until the end of the century for 854 cities in 30 European countries.**
 
-Download as an R package with
+Install with
  
 ```
  devtools::install_github('ehm-lab/hipmapp')

@@ -8,3 +8,7 @@ $run_dev.*
 ^rsconnect$
 ^doc$
 ^Meta$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$

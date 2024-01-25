@@ -1,0 +1,18 @@
+url: ~
+template:
+  bootstrap: 5
+  bootswatch: flatly
+home:
+  title: Visualise temperature related mortality projections
+  description: |
+    Do you wish see how much excess mortality there might be in Europe  under different emmissions and temperature increase scenarios? If so, you might make use of this app to explore exactly this.
+  strip_header: no
+  sidebar:
+    structure:
+    - links
+    - license
+    - community
+    - citation
+    - authors
+    - dev
+
