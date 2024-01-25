@@ -1,0 +1,31 @@
+---
+title: "Coverage-Methodology-Glossary"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Coverage-Methodology-Glossary}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(hipmapp)
+```
+
+```{r, echo=FALSE}
+shiny::includeMarkdown(system.file("app/www/coverage.md",package="hipmapp"))
+```
+
+```{r, echo=FALSE}
+shiny::includeMarkdown(system.file("app/www/methodology.md",package="hipmapp"))
+```
+
+```{r, echo=FALSE}
+shiny::includeMarkdown(system.file("app/www/glossary.md",package="hipmapp"))
+```

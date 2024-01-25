@@ -31,6 +31,11 @@ usethis::use_data_raw(name = "", open = FALSE)
 ## Add one line by test you want to create
 usethis::use_test("app")
 
+## Vignette ----
+usethis::use_vignette("App-Usage-Guide")
+devtools::build_vignettes()
+
 # You're now set! ----
 # go to dev/03_deploy.R
 rstudioapi::navigateToFile("dev/03_deploy.R")
+

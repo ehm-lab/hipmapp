@@ -1,0 +1,27 @@
+---
+title: "App-Usage-Guide"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{App-Usage-Guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(hipmapp)
+```
+
+```{r, echo=FALSE}
+shiny::includeMarkdown(system.file("app/www/app.md",package="hipmapp"))
+```
+
+```{r, echo=FALSE}
+shiny::includeMarkdown(system.file("app/www/demo.md",package="hipmapp"))
+```
