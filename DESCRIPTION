@@ -1,7 +1,19 @@
 Package: hipmapp
 Title: Health Impact Projections MApp
 Version: 0.0.1.0000
-Authors@R: person('Arturo', 'de la Cruz Libardi', email = 'Arturo.de-la-Cruz-Libardi@lshtm.ac.uk', role = c('cre', 'aut'))
+Authors@R: 
+    c(person(given = 'Arturo', 
+            family = 'de la Cruz Libardi', 
+            role = c('cre', 'aut'), 
+        email = 'Arturo.de-la-Cruz-Libardi@lshtm.ac.uk'),
+    person(given='Pierre', 
+            family='Masselot', 
+            role = c('ctb'), 
+            email = 'Pierre.Masselot@lshtm.ac.uk'),
+    person(given='Antonio', 
+            family='Gasparrini', 
+            role = c('ctb'), 
+            email = 'Antonio.Gasparrini@lshtm.ac.uk'))
 Description: Wraps Shiny App for Interactive Visualisation of Health Impact Projections.
 License: MIT + file LICENSE
 Depends: 
