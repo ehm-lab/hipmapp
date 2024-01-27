@@ -8,11 +8,11 @@ Authors@R:
         email = 'Arturo.de-la-Cruz-Libardi@lshtm.ac.uk'),
     person(given='Pierre', 
             family='Masselot', 
-            role = c('ctb'), 
+            role = c('aut'), 
             email = 'Pierre.Masselot@lshtm.ac.uk'),
     person(given='Antonio', 
             family='Gasparrini', 
-            role = c('ctb'), 
+            role = c('aut'), 
             email = 'Antonio.Gasparrini@lshtm.ac.uk'))
 Description: Wraps Shiny App for Interactive Visualisation of Health Impact Projections.
 License: MIT + file LICENSE
