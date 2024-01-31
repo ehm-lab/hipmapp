@@ -82,3 +82,55 @@ tbody {
   height: 100%;
 }
 
+#tutorialbtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2000;
+  color: white;
+  background-color: #b93038;/* #b9b130*/
+}
+
+#closetutorial {
+  position: fixed;
+  top: 20px;
+  right: 13px;
+  z-index: 2000;
+  color: white;
+  background-color:	#b93038;/* #b9b130 */
+}
+
+#tutorialpane {
+  position: fixed;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  width: 90%; /* Width of the pane */
+  height: 90%; /* Height of the pane */
+  background: rgba(0, 0, 0, 0); /* Semi-transparent background */
+  z-index: 2000; /* High enough z-index */
+  transform: translate(-50%, -50%); /* Center the div */
+  border-radius: 10px; /* Optional: adds rounded corners */
+}
+
+#tutorialcontent {
+  position: fixed;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  width: 85%; /* Width of the pane */
+  height: 80%; /* Height of the pane */
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  padding: 15px;
+  transform: translate(-50%, -50%); /* Center the div */
+  border-radius: 10px;
+  color: black;
+  max-width: 100%; /* Takes up to 80% of the parent width */
+  max-height: 100%; /* Takes up to 80% of the parent height */
+  overflow: auto; /* Adds scroll if content overflows */
+}
+
+.twell {
+  background-color: black;
+  padding: 15px;
+  width: 100%; /* Width of the pane */
+  height: 100%; /* Height of the pane */
+}

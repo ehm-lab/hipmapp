@@ -11,6 +11,26 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # for special javascript calls
     shinyjs::useShinyjs(),
+    # TUTORIAL
+    actionButton("tutorialbtn", "QuickInfo"),
+    div(id = "tutorialpane",
+             div(id = "tutorialcontent",
+                div(class = "row",
+                 div(
+                   align = "center", wellPanel(class="twell",htmltools::includeMarkdown(system.file("app/www/whattell.md", package = "hipmapp"))), class = "col-md-6"
+                 ),
+                 div(
+                   align = "center", wellPanel(class="twell",htmltools::includeMarkdown(system.file("app/www/whyimp.md", package = "hipmapp"))), class = "col-md-6"
+                 )),
+                div(class = "row",
+                 div(
+                   align = "center", wellPanel(class="twell",htmltools::includeMarkdown(system.file("app/www/whatdo.md", package = "hipmapp"))), class = "col-md-6"
+                 ),
+                 div(
+                   align = "center", wellPanel(class="twell",htmltools::includeMarkdown(system.file("app/www/whatnew.md", package = "hipmapp"))), class = "col-md-6"
+                 )),
+                ),
+        actionButton("closetutorial", "Close")),
     # APP UI LOGIC
     navbarPage(
       title="Health Impact Projections",

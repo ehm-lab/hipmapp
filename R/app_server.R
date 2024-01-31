@@ -10,8 +10,32 @@
 #' @noRd
 app_server <- function(input, output, session) {
   # Your application server logic
-
+  
+  tutorialVisible <- reactiveVal(FALSE)
+  
+  observeEvent(input$tutorialbtn, {
+    tutorialVisible(TRUE)
+  })
+  
+  observeEvent(input$closetutorial, {
+    tutorialVisible(FALSE)
+  })
+  
+  # observe({
+  #   shinyjs::toggle("tutorialpane", condition=tutorialVisible(FALSE))
+  # }) %>% bindEvent(input$tutorialbtn, input$closetutorial)
+  
+  observe({
+    if(tutorialVisible()) {
+      shinyjs::toggle("tutorialpane")
+    } else {
+      shinyjs::toggle("tutorialpane")
+    }
+  })
+  
+  
 ######################### MAP #################################################
+
 
   # READ REACTIVE INPUTS
 
