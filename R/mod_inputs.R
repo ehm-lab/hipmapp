@@ -15,8 +15,8 @@ mod_inputs_ui_2 <- function(id){
   tagList(
     selectizeInput(ns("location"), "Country", country_opts, selected=c("All"), multiple=TRUE, width=NULL),
     selectizeInput(ns("agegroup"),"Age group", agegroup_opts, selected="all", multiple=FALSE),
-    shinyWidgets::awesomeRadio(ns("ssp"), "SSP-RCP-scenario",ssp_opts, inline=F),
-    shinyWidgets::awesomeRadio(ns("sc"), "Sub-scenario",sc_opts, inline=F),
+    shinyWidgets::awesomeRadio(ns("ssp"), "SSP-RCP scenario",ssp_opts,selected="ssp2", inline=F),
+    shinyWidgets::awesomeRadio(ns("sc"), "Sub-scenario",sc_opts,selected="full", inline=F),
     shinyWidgets::awesomeRadio(ns("range"), "Temperature impact",range_opts,selected="heat", inline=F)
   )
 }
