@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   App-Usage-Guide: App-Usage-Guide.html
   Coverage-Methodology-Glossary: Coverage-Methodology-Glossary.html
-last_built: 2024-04-19T13:33Z
+last_built: 2024-04-19T13:36Z
 urls:
   reference: https://ehm-lab.github.io/hipmapp/reference
   article: https://ehm-lab.github.io/hipmapp/articles
