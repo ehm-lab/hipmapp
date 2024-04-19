@@ -9,6 +9,8 @@ Install with
 ```
 or run as a [web-app](https://ehm-lab.shinyapps.io/hipmapp/).
 
+The datasets visualised can be downloaded from within the application.
+
 # Video demo
 
 [Demo: Health Impact Projections App](https://player.vimeo.com/video/902720172)
