@@ -2,6 +2,8 @@
 
 **This app reports projections of temperature-related mortality until the end of the century for 854 cities in 30 European countries.**
 
+Latest release and dataset source [![DOI](https://zenodo.org/badge/742552198.svg)](https://zenodo.org/doi/10.5281/zenodo.10998153)
+
 Install with
  
 ```
