@@ -8,11 +8,13 @@ Developed and funded as part of the [EU H2020 EXHAUSTION](https://www.exhaustion
 
 Featured as a [Climate ADAPT tool](https://climate-adapt.eea.europa.eu/en/metadata/tools/exhaustion-health-impact-projections-tool).
 
-Install with:
+Install and run with:
  
 ```
  devtools::install_github('ehm-lab/hipmapp')
+ hipmapp::run_app()
 ```
+
 or run as a [web-app](https://ehm-lab.shinyapps.io/hipmapp/).
 
 The datasets visualised can be downloaded from within the application or the Zenodo link above.
