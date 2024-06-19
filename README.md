@@ -12,13 +12,12 @@ Install and run with:
  
 ```
  devtools::install_github('ehm-lab/hipmapp')
-
  hipmapp::run_app()
 ```
 
 or run as a [web-app](https://ehm-lab.shinyapps.io/hipmapp/).
 
-The datasets visualised can be downloaded from within the application or the Zenodo link above.
+The datasets visualised can be downloaded from within the application or the from Zenodo link above.
 
 # Video demo
 
