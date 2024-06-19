@@ -2,16 +2,20 @@
 
 **This app reports projections of temperature-related mortality until the end of the century for 854 cities in 30 European countries.**
 
-Latest release and dataset source [![DOI](https://zenodo.org/badge/742552198.svg)](https://zenodo.org/doi/10.5281/zenodo.10998153)
+[![DOI](https://zenodo.org/badge/742552198.svg)](https://zenodo.org/doi/10.5281/zenodo.10998153)
 
-Install with
+Developed and funded as part of the [EU H2020 EXHAUSTION](https://www.exhaustion.eu/) project. 
+
+Featured as a [Climate ADAPT tool]([https://www.exhaustion.eu/](https://climate-adapt.eea.europa.eu/en/metadata/tools/exhaustion-health-impact-projections-tool).
+
+Install with:
  
 ```
  devtools::install_github('ehm-lab/hipmapp')
 ```
 or run as a [web-app](https://ehm-lab.shinyapps.io/hipmapp/).
 
-The datasets visualised can be downloaded from within the application.
+The datasets visualised can be downloaded from within the application or the Zenodo link above.
 
 # Video demo
 
