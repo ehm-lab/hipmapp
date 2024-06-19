@@ -6,12 +6,13 @@
 
 Developed and funded as part of the [EU H2020 EXHAUSTION](https://www.exhaustion.eu/) project. 
 
-Featured  as a [Climate ADAPT tool](https://climate-adapt.eea.europa.eu/en/metadata/tools/exhaustion-health-impact-projections-tool).
+Featured as a [Climate ADAPT tool](https://climate-adapt.eea.europa.eu/en/metadata/tools/exhaustion-health-impact-projections-tool).
 
 Install and run with:
  
 ```
  devtools::install_github('ehm-lab/hipmapp')
+
  hipmapp::run_app()
 ```
 
