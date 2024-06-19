@@ -4,9 +4,6 @@
     <loc>https://ehm-lab.github.io/hipmapp/404.html</loc>
   </url>
   <url>
-    <loc>https://ehm-lab.github.io/hipmapp/LICENSE-text.html</loc>
-  </url>
-  <url>
     <loc>https://ehm-lab.github.io/hipmapp/articles/App-Usage-Guide.html</loc>
   </url>
   <url>
@@ -20,6 +17,9 @@
   </url>
   <url>
     <loc>https://ehm-lab.github.io/hipmapp/index.html</loc>
+  </url>
+  <url>
+    <loc>https://ehm-lab.github.io/hipmapp/LICENSE-text.html</loc>
   </url>
   <url>
     <loc>https://ehm-lab.github.io/hipmapp/reference/index.html</loc>
