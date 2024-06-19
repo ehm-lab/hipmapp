@@ -16,6 +16,8 @@ golem::fill_desc(
   pkg_version = "0.0.1.0000" # The Version of the package containing the App
 )
 
+library(cffr)
+cffr::cff_write()
 ## Set {golem} options ----
 golem::set_golem_options()
 
