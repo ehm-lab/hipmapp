@@ -12,6 +12,7 @@ Install and run with:
  
 ```
  devtools::install_github('ehm-lab/hipmapp')
+
  hipmapp::run_app()
 ```
 
